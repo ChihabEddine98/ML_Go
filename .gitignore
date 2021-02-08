@@ -131,4 +131,5 @@ dmypy.json
 # SELF
 venv
 .idea
+.vscode
 
