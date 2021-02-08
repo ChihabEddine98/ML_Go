@@ -110,8 +110,6 @@ Soit les exemples $x_i,y_i$ avec $x_i \in \R^d$ et $y_i \in \{0,1\}$ on a la fon
     \textbf{Output :} Une valeur $\theta$ qui minimise $J_0$\\
      \Begin{
       $\theta = 0_{\R^d}$\;
-      cercles = $\mbox{ les cercles de } Q \mbox{ triés de gauche à droite.}$ \;
-      Q* = $\emptyset$ . \\
      \Repeter{ $\norm{g} \geq \varepsilon$ }
      {
         Tirer $i$ uniformément de 1 à $N$ \;
@@ -132,7 +130,39 @@ Soit les exemples $x_i,y_i$ avec $x_i \in \R^d$ et $y_i \in \{0,1\}$ on a la fon
     \end{algorithm}\leavevmode\newline 
     \clearpage
     \item
-    \item 
-    
+    On fait analogie avec l'algorithme d'apprentissage du perceptron en version stochastique , on distingue deux cas principaux pour la valeur de $\theta$ Soit elle sera modifiée ( les poids du perceptron $\theta$ sont poussés dans la direction de la classe correcte dans l'itération suivante ou pas de modification des poids $\theta$ du perceptron ( si on a pas commis d'erreur).
+    \item ($c=1$) Soit la fonction de cout $J_1$ : $J_1(\theta) = \Sigma_{i=1}^N Cout_1(\theta,x_i,y_i)$ , et le classifieur $f_\theta$ associé à $\theta$ $
+     f_\theta(x) =
+     \begin{cases}
+         1 & \mbox{si } \theta^Tx \geq 0 \\
+         0 & \mbox{sinon } 
+     \end{cases}
+     $ et la fonction d'erreur $err$ donnée par : \\ 
+     $err(\theta) = \Sigma_{i=1}^N \textbf{1}[f_\theta(x_i)\neq y_i]$ . Montrons que $err(\theta) \leq J_1(\theta)$ pour tout $\theta \in \R^d$.\\
+     La fonction $Cout_1$ est donnée par la relation : 
+     \begin{equation}
+        Cout_1(\theta,x_i,y_i) = y_i \max(0,1-\theta^Tx_i) + (1-y_i) \max(0,1+\theta^Tx_i)
+        \label{eq:e1}
+    \end{equation}
+     On ecrit la fonction $Cout_1$ de cette maniere :
+     $$
+     Cout_1(\theta,x_i,y_i) =
+     \begin{cases}
+         y_i(1-\theta^Tx_i), & \mbox{si } \theta^Tx_i < -1 \\
+         1+(1-2y_i)\theta^Tx_i, & \mbox{si } -1 \leq \theta^Tx_i < 1 \\
+         (1-y_i)(1+\theta^Tx_i), & \mbox{si }   \theta^Tx_i \geq 1 \\
+     \end{cases}
+     $$\\
+     On a d'autres part
+     $$
+     \textbf{1}[f_\theta(x_i)\neq y_i] = \textbf{1}[f_\theta(x_i) = 1 \land y_i = 0 ]+ \textbf{1}[f_\theta(x_i) = 0 \land y_i = 1 ]
+     $$
+     $$
+     = \textbf{1}[\theta^Tx_i \geq 0 \land y_i = 0 ]+ \textbf{1}[\theta^Tx_i < 0 \land y_i = 1 ]
+     $$
+     Dans le cas ou ($\theta^Tx_i \geq 0 \land y_i = 0$) on a $Cout_1(\theta,x_i,y_i) = 1+\theta^Tx_i \geq 1$ \\
+     Et dans l'autre cas ou ($\theta^Tx_i < 0 \land y_i = 1$) on a $Cout_1(\theta,x_i,y_i) = 1-\theta^Tx_i \geq 1$ \\
+     Donc dans les deux cas possibles on a $err(\theta) \leq J_1(\theta)$ ( On somme et on minore chaque terme ).\\
+     On en déduit que l'optimisation de $J_1(\theta)$ est un probleme difficile puisque la minimisation de $err(\theta)$ est difficile.
 \end{enumerate}
 \end{document}
