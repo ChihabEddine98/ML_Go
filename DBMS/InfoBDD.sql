@@ -19,7 +19,7 @@ SELECT DISTINCT constructeur FROM Produit;
 
 -- Question 03:
 -- Quels sont les modèles des ordinateurs référencés ?
-SELECT modele FROM Produit WHERE type in ["Desktop","Laptop"];
+SELECT modele FROM Produit WHERE type in ("Desktop","Laptop");
 
 -- Question 04 :
 -- Quels sont les PC avec 256 Mo de RAM ?
