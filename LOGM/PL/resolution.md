@@ -1,4 +1,6 @@
-# TD3
+# Resolution & Refutation in PL 
+
+# TD3 -- 16/02/2021
 ## Exo 3
 1. $\{P,Q\}$
 2. $\{P,\lnot Q\}$
