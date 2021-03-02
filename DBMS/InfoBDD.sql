@@ -60,3 +60,6 @@ Select Constructeur From Produit EXCEPT
 UNION
 Select Constructeur From Produit EXCEPT 
 (Select Constructeur FROM Produit Where Type = 'Desktop' OR Type='Laptop') ;
+
+-- TODO
+-- Try Difficulty level 3
