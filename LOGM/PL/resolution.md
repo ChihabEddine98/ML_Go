@@ -59,3 +59,5 @@ So we have :
 6. $\{ A, B,\lnot C\}$ **Res(4,5)**
 7. $\{ A, \lnot C\}$ **Res(1,6)**
 8. $\{ A ,\lnot A\}$ **Res(2,7)** $\blacksquare$
+
+<!-- TODO --- Execute DPLL algorithm  -->
