@@ -60,4 +60,4 @@ So we have :
 7. $\{ A, \lnot C\}$ **Res(1,6)**
 8. $\{ A ,\lnot A\}$ **Res(2,7)** $\blacksquare$
 
-<!-- TODO --- Execute DPLL algorithm  -->
+<!-- TODO --- Execute DPLL algorithm and study its complexity  -->
