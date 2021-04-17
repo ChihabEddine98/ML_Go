@@ -1,2 +1,2 @@
 # ML_Go
-My codes for ML & DS Master's degree
+My codes for ML & DS Master degree
