@@ -2,4 +2,4 @@
 My codes for ML & DS Master degree
 
 ## TODO ---
-Neural Nets
+Neural Nets bp
