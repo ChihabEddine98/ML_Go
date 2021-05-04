@@ -2,4 +2,4 @@
 My codes for ML & DS Master degree
 
 ## TODO ---
-Neural Nets bp
+Neural Nets (torch)
