@@ -38,6 +38,7 @@ class LH:
         pos = self.trouvePosition(v)
         new_page_pos = [None]*2
 
+        print(self.pages)
         for i in range(len(self.pages[pos])):
             if None in self.pages[pos][i]:
                 new_page_pos = [i,self.pages[pos][i].index(None)]
@@ -47,13 +48,19 @@ class LH:
             self.pages[pos][new_page_pos[0]][new_page_pos[1]] = v
         else: # Y a débordement
             new_page = self.new_page()
-            new_page[new_page.index(None)] = v
             self.pages[pos].append(new_page)
+            new_page_pos = [-1, 0]
+            self.pages[pos][new_page_pos[0]][new_page_pos[1]] = v
 
             self.p += 1
 
             if self.p == self.M:
+                self.p = 0
                 self.doublements += 1
+                self.M *= 2
+                self.pages.append([self.new_page()])
+
+
 
 
 
@@ -69,16 +76,12 @@ class LH:
 if __name__ == '__main__':
     h = LH(2,3)
 
+    h.show()
     h.insert(4)
     h.insert(8)
     h.insert(16)
     h.insert(2)
-    h.insert(1)
-    h.insert(3)
-    h.insert(5)
-    h.insert(7)
-    h.insert(9)
-    h.insert(11)
+    h.insert(18)
 
 
     h.show()
