@@ -34,11 +34,41 @@ class LH:
     def new_page(self):
         return [None]* self.dpag
 
+    def insertionDansChaine(self, v, position):
+
+        pageEtIndex = [None, None]
+
+        # On parcourt les pages de la chaine pour trouver une place
+
+        for x in range(len(self.pages[position])):
+
+            if None in self.pages[position][x]:
+
+                pageEtIndex[1] = self.pages[position][x].index(None)
+
+                pageEtIndex[0] = x
+
+            break
+
+        # Si il y a une place on met v à cette place
+
+        if pageEtIndex[0] is not None:
+            self.insertionSurPosition(v, position, pageEtIndex)
+            return False
+
+        # Sinon on rajoute une page dans la chaine (ce qui va provoquer un debordement +repartition).
+
+        else:
+            self.pages[position].append([None] * self.dpag)
+            pageEtIndex[1] = 0
+            pageEtIndex[0] = -1
+            self.insertionSurPosition(v, position, pageEtIndex)
+            return True
+
     def insert(self , v):
         pos = self.trouvePosition(v)
         new_page_pos = [None]*2
 
-        print(self.pages)
         for i in range(len(self.pages[pos])):
             if None in self.pages[pos][i]:
                 new_page_pos = [i,self.pages[pos][i].index(None)]
@@ -52,13 +82,16 @@ class LH:
             new_page_pos = [-1, 0]
             self.pages[pos][new_page_pos[0]][new_page_pos[1]] = v
 
-            self.p += 1
+
 
             if self.p == self.M:
                 self.p = 0
                 self.doublements += 1
                 self.M *= 2
                 self.pages.append([self.new_page()])
+            else :
+                self.p += 1
+
 
 
 
@@ -74,14 +107,12 @@ class LH:
 
 
 if __name__ == '__main__':
-    h = LH(2,3)
+    h = LH(2,2)
 
     h.show()
-    h.insert(4)
-    h.insert(8)
-    h.insert(16)
-    h.insert(2)
-    h.insert(18)
+    for i in range(1,10):
+        h.insert(i)
+        h.show()
 
 
     h.show()
