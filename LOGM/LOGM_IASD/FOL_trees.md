@@ -69,4 +69,4 @@ $$
 
 $$
  \alpha_8: \;  (\exists x\;\exists t\; F(x,t)) \land \neg (\forall x' \forall t' F(x',t')) 
-$$
+$$  ee
