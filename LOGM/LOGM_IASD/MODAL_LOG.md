@@ -13,8 +13,8 @@
     - $w_0 \models \square\;(\lnot p \lor \lnot p)$
     - $w_0 \not\models \square\;\lnot p \lor \square\;\lnot p$
 2. $\Diamond$ doesn't distribute over $\land$ : 
-    - $w_0 \models \Diamond\;(p \land \lnot p)$
-    - $w_0 \not\models \Diamond\; p \land \Diamond\;\lnot p$
+    - $w_0 \models \Diamond\;(p \land  q)$
+    - $w_0 \not\models \Diamond\; p \land \Diamond\;q$
 
 
 ## Exo3. 
