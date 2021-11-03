@@ -1,3 +1,6 @@
+[check this link](https://www.math.cmu.edu/~wgunther/talks/modallogic.pdf)
+and [this links](https://formal.kastel.kit.edu/~beckert/teaching/Spezifikation-SS04/04ModalLogic.pdf) 
+[, and this Book](https://builds.openlogicproject.org/courses/boxes-and-diamonds/bd-screen.pdf)
 ## Exo 1.
 ---
 - Let $\mathcal{W}_i$ be the set of worlds satisfying $\phi_i$ 
@@ -19,3 +22,17 @@
 
 ## Exo3. 
 ---
+- Proof that $\Big (\square\; (\varphi \rightarrow \psi) \land \square\; \varphi \Big )\rightarrow \Big ( \square\;\psi\Big ) $ is valid :
+
+- Let $\mathcal{M} =(\mathcal{W},\mathcal{R},V)$ any 'Kripke'-model and assume that there exists a world $w$ **s.t** :  $M,w$ $\models$ $\square\; (\varphi \rightarrow \psi) \land \square\; \varphi$
+
+$M,w \models \square\; (\varphi \rightarrow \psi) \land \square\; \varphi$
+
+$M,w \models \square\; (\varphi \rightarrow \psi)$ **and** 
+$M,w \models  \square\; \varphi$  
+
+means that for all worlds $w'$ **s.t:**
+$w\mathcal{R}w'$ ($w'$ accesible from $w$) **We have** 
+$M,w' \models\; \varphi \rightarrow \psi$ **and** 
+$M,w' \models \varphi$
+Applying the Modus-Poenus here we get exactly what expected.
