@@ -1,4 +1,4 @@
-[check this link](https://www.math.cmu.edu/~wgunther/talks/modallogic.pdf)
+[check this link .](https://www.math.cmu.edu/~wgunther/talks/modallogic.pdf)
 and [this links](https://formal.kastel.kit.edu/~beckert/teaching/Spezifikation-SS04/04ModalLogic.pdf) 
 [, and this Book](https://builds.openlogicproject.org/courses/boxes-and-diamonds/bd-screen.pdf)
 ## Exo 1.
