@@ -20,7 +20,6 @@ res = customer.map(lambda x : x.split(','))\
               .filter(lambda x : x[1].split('/')[1] == '07')\
               .map(lambda x : (x[-1],1))\
               .reduceByKey(lambda x,y:x+y)\
-              .filter(lambda x: x[1]==1)\
               .map(lambda x : x[0])
 res.take(5)
 ```
