@@ -24,9 +24,7 @@ res = customer.map(lambda x : x.split(','))\
               .map(lambda x : x[0])
 res.take(5)
 ```
-
-
-
+---
 # Q3 : 
 ```python
 from operator import methodcaller,add
