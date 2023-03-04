@@ -2,6 +2,6 @@
 My codes for ML & DS Master degree ++
 Add SVM M2 + PySpark + scala version
 
-docker training -- 
+docker training 
 
 
