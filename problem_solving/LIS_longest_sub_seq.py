@@ -12,6 +12,7 @@ def lis_solver(seq):
     
     for i in range(1,len(L)):
         sub_problems = [L[k] for k in range(i) if seq[k] < seq[i]]
+        print(sub_problems)
         L[i] = 1 + max(sub_problems,default=0)
     
     return max(L,default=0)
