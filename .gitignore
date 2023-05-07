@@ -133,4 +133,5 @@ venv
 .idea
 .vscode
 *.csv
+*data*
 
